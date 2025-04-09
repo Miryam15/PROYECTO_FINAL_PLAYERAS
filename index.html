@@ -6,11 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda de Playeras - Punto de Venta</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f1f1f1;
-            padding-top: 80px;
+            padding-top: 20px;
         }
 
         .navbar {
@@ -117,71 +120,98 @@
             box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
             font-size: 0.8rem;
         }
+
+        .carousel-item {
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .carousel-caption {
+            bottom: 30%;
+            z-index: 10;
+        }
+
+        .btn-pink {
+            background-color: #ff2aa0;
+            border: none;
+            color: white;
+        }
+
+        .btn-pink:hover {
+            background-color: #e11b85;
+            color: white;
+        }
+
     </style>
 </head>
 
 <body>
-    <!-- Barra de navegación -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Tienda de Playeras</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="punto_v.html">Venta</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="productos.html">Productos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="proveedores.html">Proveedores</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pedidos.html">Pedidos</a>
-                    </li>
-                </ul>
-            </div>
+          <a class="navbar-brand" href="#">Tienda de Playeras</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="productos.html">Productos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="punto_v.html">Ventas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="proveedores.html">Proveedores</a>
+              </li>
+            </ul>
+          </div>
         </div>
-    </nav>
+      </nav>
 
-    <!-- Sección de presentación con carrusel de imágenes -->
-    <div class="hero-section">
-        <h1>Bienvenido a Tu Tienda de Playeras</h1>
-        <p>Descubre nuestra colección de playeras y mucho más. ¡Compra, vende y disfruta de lo mejor en textiles!</p>
-        <a href="venta.html" class="btn btn-light btn-lg">Empezar Compra</a>
+
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="30000">
+    <div class="carousel-inner">
+      <div class="carousel-item active" style="background-image: url('Static/hilo1.jpeg');">
+        
+        <div class="carousel-caption d-none d-md-block">
+          <h1 class="display-4 fw-bold">Educación divertida</h1>
+          <p>Simple Text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id suscipit ex.</p>
+          <a href="#" class="btn btn-pink btn-lg me-3">APRENDE MÁS</a>
+          <a href="#" class="btn btn-outline-light btn-lg">DEMO EN VIVO</a>
+        </div>
+      </div>
+      <div class="carousel-item" style="background-image: url('Static/foto\ 2.jpg');">
+        <div class="carousel-caption d-none d-md-block">
+          <h1 class="display-4 fw-bold">Estilo y confort</h1>
+          <p>Descubre nuestras playeras más populares para cualquier ocasión.</p>
+          <a href="#" class="btn btn-pink btn-lg me-3">VER PRODUCTOS</a>
+          <a href="#" class="btn btn-outline-light btn-lg">CONTÁCTANOS</a>
+        </div>
+      </div>
+      <div class="carousel-item" style="background-image: url('Static/foto3.jpg');">
+        <div class="carousel-caption d-none d-md-block">
+          <h1 class="display-4 fw-bold">Personaliza tu estilo</h1>
+          <p>Crea tu propia playera con nuestros diseños únicos.</p>
+          <a href="#" class="btn btn-pink btn-lg me-3">PERSONALIZA</a>
+          <a href="#" class="btn btn-outline-light btn-lg">SABER MÁS</a>
+        </div>
+      </div>
     </div>
-
-    <!-- Carrusel de imágenes -->
-    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <!-- Primer ítem del carrusel -->
-            <div class="carousel-item active">
-                <img src="Static/textil1.jpeg" class="d-block w-100" alt="Playeras Casuales">
-            </div>
-            <!-- Segundo ítem del carrusel -->
-            <div class="carousel-item">
-                <img src="static/textil2.jpeg" class="d-block w-100" alt="Playeras de Algodón">
-            </div>
-            <!-- Tercer ítem del carrusel -->
-            <div class="carousel-item">
-                <img src="static/textil3.jpeg" class="d-block w-100" alt="Playeras Estampadas">
-            </div>
-        </div>
-        <!-- Controles del carrusel -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Anterior</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Siguiente</span>
-        </button>
+    <!-- Controles -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
+  </div>
+  
     </div>
    
+</body>
+</html>
